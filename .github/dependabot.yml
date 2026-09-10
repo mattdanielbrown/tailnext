@@ -1,0 +1,28 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    groups:
+      # Estos paquetes solo funcionan en conjunto: separarlos genera PRs que no
+      # pueden pasar CI por sí solas. Es la lección de esta modernización.
+      next:
+        patterns: ['next', 'eslint-config-next', '@next/*', 'react', 'react-dom', '@types/react', '@types/react-dom']
+      tailwind:
+        patterns: ['tailwindcss', '@tailwindcss/*', 'tailwind-merge', 'prettier-plugin-tailwindcss']
+      storybook:
+        patterns: ['storybook', '@storybook/*', 'eslint-plugin-storybook']
+      vitest:
+        patterns: ['vitest', '@vitest/*', 'playwright', '@playwright/*']
+      content:
+        patterns: ['@content-collections/*', 'rehype-*', 'remark-*', 'shiki', 'zod']
+      dev-minor:
+        dependency-type: development
+        update-types: ['minor', 'patch']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly

@@ -1,170 +1,136 @@
-# Tailnext
+# TailNext
 
-**Tailnext** is a free and open-source template to make your website using **[NextJS](https://nextjs.org/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account best practices.
+A production-ready template for building marketing sites and blogs with **Next.js 16**, **React 19** and **Tailwind CSS 4**.
 
-## Features
-
-- ✅ Integration with **Tailwind CSS** supporting **Dark mode**.
-- ✅ **Production-ready** scores in [Lighthouse](https://web.dev/measure/) and [PageSpeed Insights](https://pagespeed.web.dev/) reports.
-- ✅ **Image optimization** and **Font optimization**.
-- ✅ Fast and **SEO friendly blog**.
-- ✅ Generation of **project sitemap** and **robots.txt** based on your routes.
-
-<br>
-
-<img src="./screenshot.jpg" alt="Tailnext Theme Screenshot">
-
-[![Arthelokyo](https://custom-icon-badges.demolab.com/badge/made%20by%20-Arthelokyo-556bf2?style=flat-square&logo=arthelokyo&logoColor=white&labelColor=101827)](https://arthelokyo.com)
 [![License](https://img.shields.io/github/license/arthelokyo/tailnext?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/arthelokyo/tailnext/blob/main/LICENSE.md)
-[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo/tailnext#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/arthelokyo/tailnext/badge.svg?style=flat-square)](https://snyk.io/test/github/arthelokyo/tailnext)
+[![Arthelokyo](https://custom-icon-badges.demolab.com/badge/made%20by%20-Arthelokyo-556bf2?style=flat-square&logo=arthelokyo&logoColor=white&labelColor=101827)](https://arthelokyo.com)
 
-<br>
+![TailNext](./screenshot.jpg)
 
-<details open>
-<summary>Table of Contents</summary>
+## What's inside
 
-- [Demo](#demo)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+|              |                                                                                       |
+| ------------ | ------------------------------------------------------------------------------------- |
+| Framework    | Next.js 16 (App Router, Turbopack) with React 19                                      |
+| Styling      | Tailwind CSS 4, CSS-first `@theme` configuration                                      |
+| Language     | TypeScript 6, strict mode                                                             |
+| Content      | MDX through content-collections, frontmatter validated with Zod                       |
+| Highlighting | Shiki at build time, light and dark themes                                            |
+| Testing      | Every Storybook story runs as a browser test in Vitest, with axe accessibility checks |
+| Tooling      | ESLint 9 flat config, Prettier, husky, lint-staged, commitlint                        |
 
-</details>
-
-<br>
-
-## Demo
-
-📌 [https://tailnext.vercel.app/](https://tailnext.vercel.app/)
-
-<br>
+Dark mode, SEO metadata, Open Graph images, JSON-LD, a native sitemap and
+security headers are wired up rather than left as exercises.
 
 ## Getting started
 
-- Clone: `git clone https://github.com/arthelokyo/tailnext.git`
-- Enter in the directory: `cd tailnext`
-- Install dependencies: `npm install`
-- Start the development server: `npm run dev`
-- View project in local environment: `localhost:3000`
-
-### Project structure
-
-Inside **Tailnext** template, you'll see the following folders and files:
-
-```
-/
-├── .storybook/
-├── app/
-│   ├── (blog)
-│   │   ├── [slug]
-|   |   |   └── page.js
-|   |   └── blog
-|   |       └── page.js
-│   ├── head.js
-│   ├── layout.js
-│   └── page.js
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/
-│   │   ├── images/
-|   |   └── styles/
-|   |       └── base.css
-│   ├── components/
-│   │   ├── atoms/
-|   |   └── widgets/
-|   |       ├── Header.astro
-|   |       ├── Footer.astro
-|   |       └── ...
-│   │── content/
-│   |   └── blog/
-│   |       ├── demo-post-1.md
-│   |       └── ...
-│   ├── stories/
-│   ├── utils/
-│   └── config.mjs
-├── package.json
-└── ...
+```bash
+git clone https://github.com/arthelokyo/tailnext.git
+cd tailnext
+npm ci
+npm run dev
 ```
 
-[![Edit Tailnext on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/arthelokyo/tailnext/tree/main)
+Then open <http://localhost:3000>.
 
-> **Seasoned next.js expert?** Delete this file. Update `config.mjs` and contents. Have fun!
+Node 24 is the target. `.nvmrc` pins it, and `engines` sets the floor at 20.9.
 
-<br>
+## Commands
 
-### Commands
+| Command                               | Description                                                |
+| ------------------------------------- | ---------------------------------------------------------- |
+| `npm run dev`                         | Development server on `localhost:3000`                     |
+| `npm run build`                       | Production build to `.next/`                               |
+| `npm start`                           | Serve the production build                                 |
+| `npm test`                            | Run every story as a browser test, including accessibility |
+| `npm run test:watch`                  | Same, in watch mode                                        |
+| `npm run storybook`                   | Storybook on `localhost:6006`                              |
+| `npm run build-storybook`             | Static Storybook build                                     |
+| `npm run lint` / `lint:fix`           | ESLint                                                     |
+| `npm run typecheck`                   | TypeScript, no emit                                        |
+| `npm run prettier` / `prettier:check` | Formatting                                                 |
 
-All commands are run from the root of the project, from a terminal:
+## Project structure
 
-| Command               | Action                                       |
-| :-------------------- | :------------------------------------------- |
-| `npm install`         | Install dependencies                         |
-| `npm run dev`         | Starts local dev server at `localhost:3000`  |
-| `npm run build`       | Build your production site to `./dist/`      |
-| `npm run preview`     | Preview your build locally, before deploying |
-| `npm run storybook`   | Open storybook to view stories by widgets    |
-| `npm run format`      | Format codes with Prettier                   |
-| `npm run lint:eslint` | Run Eslint                                   |
-
-<br>
-
-### Configuration
-
-Coming soon ..
-
-<br>
-
-### Deploy
-
-#### Deploy to production (manual)
-
-You can create an optimized production build with:
-
-```shell
-npm run build
+```
+app/                      App Router routes, sitemap, robots, OG images
+  (blog)/blog/            Blog index and /blog/[slug]
+  (legal)/                Privacy and terms
+  (pages)/                About, contact, faqs, pricing, services
+src/
+  assets/styles/base.css  Tailwind entry point and @theme tokens
+  components/
+    atoms/                Logo, theme toggle, menu toggle, providers
+    common/               Building blocks shared by widgets
+    widgets/              Page sections composed from data
+  content/
+    blog/                 Posts as .mdx
+    legal/                Privacy and terms as .mdx
+  shared/data/            Page copy, typed
+  stories/                Storybook stories, which double as the test suite
+  utils/                  Metadata helpers
+content-collections.ts    Content schema and MDX pipeline
+src/config.ts             Site name, origin, title, description
 ```
 
-Now, your website is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
+## Configuration
 
-#### Deploy to Netlify
+Site-wide settings live in `src/config.ts`. The canonical origin can be
+overridden per environment with `NEXT_PUBLIC_SITE_ORIGIN`, which is useful for
+preview deployments and forks; see `.env.example`.
 
-Clone this repository on own GitHub account and deploy to Netlify:
+Design tokens are defined in `src/assets/styles/base.css` under `@theme`.
+Tailwind 4 has no `tailwind.config.js`.
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/arthelokyo/tailnext.git)
+## Writing content
 
-#### Deploy to Vercel
+Add an `.mdx` file to `src/content/blog`:
 
-Clone this repository on own GitHub account and deploy to Vercel:
+```mdx
+---
+title: 'Post title'
+description: 'Shown in search results and social cards'
+publishDate: 'Nov 02 2022'
+image: 'https://images.unsplash.com/photo-...'
+tags: [markdown, blog]
+---
+
+Your content. Code blocks are highlighted by Shiki.
+```
+
+Frontmatter is validated at build time. A missing title or an unparseable
+`publishDate` fails the build with a specific message instead of rendering
+something wrong.
+
+Set `draft: true` to keep a post out of the site.
+
+## Testing
+
+There is no separate test directory. Stories are the tests:
+
+```bash
+npm test
+```
+
+Each story renders in headless Chromium and is checked with axe. An
+accessibility violation fails the run, so regressions surface before review.
+
+## Deploy
+
+The build is a standard Next.js application and runs anywhere Next.js does.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farthelokyo%2Ftailnext)
+[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/arthelokyo/tailnext.git)
 
-<br>
-
-## Roadmap
-
-Coming soon ..
-
-<br>
+Set `NEXT_PUBLIC_SITE_ORIGIN` to the deployed domain so canonical URLs, the
+sitemap and social cards point at the right place.
 
 ## Contributing
 
-If you have any idea, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
-
-## Acknowledgements
-
-Initially created by [Arthelokyo](https://arthelokyo.com) and maintained by a community of [contributors](https://github.com/arthelokyo/tailnext/graphs/contributors).
+See [CONTRIBUTING.md](./CONTRIBUTING.md). Security reports go through
+[SECURITY.md](./SECURITY.md), which also documents the known advisories in the
+MDX toolchain.
 
 ## License
 
-**Tailnext** is licensed under the MIT license — see the [LICENSE](https://github.com/arthelokyo/tailnext/blob/main/LICENSE.md) file for details.
+MIT — see [LICENSE.md](./LICENSE.md).
