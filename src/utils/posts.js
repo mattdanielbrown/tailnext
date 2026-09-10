@@ -40,29 +40,13 @@ export const findLatestPosts = async ({ count } = {}) => {
 export const findPostBySlug = async (slug) => {
   if (!slug) return null;
 
-  try {
-    const readFile = fs.readFileSync(join(BLOG_DIR, `${slug}.md`), 'utf-8');
-    const { data: frontmatter, content } = matter(readFile);
-    return {
-      slug,
-      ...frontmatter,
-      content,
-    };
-  } catch (e) {}
+  const file = join(BLOG_DIR, `${slug}.md`);
+  if (!fs.existsSync(file)) return null;
 
-  return null;
-};
-
-/** */
-export const findPostsByIds = async (ids) => {
-  if (!Array.isArray(ids)) return [];
-
-  const posts = await fetchPosts();
-
-  return ids.reduce(function (r, id) {
-    posts.some(function (post) {
-      return id === post.id && r.push(post);
-    });
-    return r;
-  }, []);
+  const { data: frontmatter, content } = matter(fs.readFileSync(file, 'utf-8'));
+  return {
+    slug,
+    ...frontmatter,
+    content,
+  };
 };
