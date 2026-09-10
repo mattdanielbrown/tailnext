@@ -34,7 +34,7 @@ const Testimonials2 = ({ header, testimonials, isTestimonialUp, id, hasBackgroun
             testimonial && (
               <div
                 key={`item-testimonial-${index}`}
-                className="linear mx-auto inline-flex min-w-full max-w-6xl flex-col items-stretch justify-center transition-all duration-300"
+                className="mx-auto inline-flex min-w-full max-w-6xl flex-col items-stretch justify-center transition-all duration-300"
                 style={{ transform: `translate(-${activeIndex * 100}%)` }}
               >
                 <ItemTestimonial
@@ -53,7 +53,12 @@ const Testimonials2 = ({ header, testimonials, isTestimonialUp, id, hasBackgroun
                   testimonialClass="text-2xl font-medium text-gray-900 dark:text-white"
                 />
                 <div className="mb-6 flex items-center justify-center p-4 md:absolute md:inset-0 md:mb-0 md:justify-between">
-                  <button onClick={() => handleGoToPrevious(index)}>
+                  <button
+                    type="button"
+                    onClick={() => handleGoToPrevious(index)}
+                    aria-label="Previous testimonial"
+                    disabled={activeIndex === firstIndex}
+                  >
                     <IconChevronLeft
                       className={`mr-4 h-12 w-12 ${
                         activeIndex === firstIndex
@@ -62,7 +67,12 @@ const Testimonials2 = ({ header, testimonials, isTestimonialUp, id, hasBackgroun
                       }`}
                     />
                   </button>
-                  <button onClick={() => handleGoToNext(index)}>
+                  <button
+                    type="button"
+                    onClick={() => handleGoToNext(index)}
+                    aria-label="Next testimonial"
+                    disabled={activeIndex === lastIndex}
+                  >
                     <IconChevronRight
                       className={`ml-4 h-12 w-12 ${
                         activeIndex === lastIndex

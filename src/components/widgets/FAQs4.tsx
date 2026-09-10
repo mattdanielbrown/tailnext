@@ -29,15 +29,17 @@ const FAQs4 = ({ header, tabs, id, hasBackground = false }: FAQsProps) => {
                   };
 
                   return (
-                    <li
-                      key={`tab-${index}`}
-                      className={`mb-5 flex cursor-pointer items-center ${
-                        activeTab === index ? 'text-primary-600 dark:text-primary-200' : ''
-                      }`}
-                      tabIndex={0}
-                      onClick={onSelectTab}
-                    >
-                      <span className="w-full text-xl hover:underline">{tab.link?.label}</span>
+                    <li key={`tab-${index}`} className="mb-5">
+                      <button
+                        type="button"
+                        onClick={onSelectTab}
+                        aria-current={activeTab === index}
+                        className={`flex w-full cursor-pointer items-center text-left ${
+                          activeTab === index ? 'text-primary-600 dark:text-primary-200' : ''
+                        }`}
+                      >
+                        <span className="w-full text-xl hover:underline">{tab.link?.label}</span>
+                      </button>
                     </li>
                   );
                 })}
