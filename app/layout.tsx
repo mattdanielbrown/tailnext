@@ -1,6 +1,6 @@
 import { Metadata, Viewport } from 'next';
 
-import { SITE } from '~/config.js';
+import { SITE } from '~/config';
 
 import Providers from '~/components/atoms/Providers';
 import Header from '~/components/widgets/Header';

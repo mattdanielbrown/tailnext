@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { SITE } from '~/config.js';
+import { SITE } from '~/config';
 
 import Hero from '~/components/widgets/Hero';
 import SocialProof from '~/components/widgets/SocialProof';

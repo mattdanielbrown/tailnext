@@ -2,7 +2,7 @@
 
 import { useId, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { FormProps } from '../../shared/types';
+import { FormProps } from '~/shared/types';
 
 const Form = ({
   title,

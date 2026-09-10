@@ -6,7 +6,7 @@ import {
   IconChevronDown,
   IconRss,
 } from '@tabler/icons-react';
-import { AnnouncementProps, FooterProps, HeaderProps } from '../types';
+import { AnnouncementProps, FooterProps, HeaderProps } from '~/shared/types';
 
 // Announcement data
 export const announcementData: AnnouncementProps = {

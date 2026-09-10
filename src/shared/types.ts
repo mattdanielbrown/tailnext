@@ -1,59 +1,59 @@
 import { StaticImageData } from 'next/image';
-import { ReactElement } from 'react';
+import type { MouseEventHandler, ReactElement } from 'react';
 import type { TablerIcon } from '@tabler/icons-react';
 
-type Widget = {
+export type Widget = {
   id?: string;
   /** Does it have a background? */
   hasBackground?: boolean;
 };
 
-type WrapperTagProps = Widget & {
+export type WrapperTagProps = Widget & {
   children: React.ReactNode;
   containerClass?: string;
 };
 
-type BackgroundProps = {
+export type BackgroundProps = {
   children?: React.ReactNode;
   hasBackground?: boolean;
 };
 
-type Header = {
+export type Header = {
   title?: string | ReactElement;
   subtitle?: string | ReactElement;
   tagline?: string;
   position?: 'center' | 'right' | 'left';
 };
 
-type HeadlineProps = {
+export type HeadlineProps = {
   header: Header;
   containerClass?: string;
   titleClass?: string;
   subtitleClass?: string;
 };
 
-type Icon = TablerIcon;
+export type Icon = TablerIcon;
 
-type CallToActionType = {
+export type CallToActionType = {
   text?: string;
   href: string;
   icon?: Icon;
   targetBlank?: boolean;
 };
 
-type LinkOrButton = {
+export type LinkOrButton = {
   callToAction?: CallToActionType;
   containerClass?: string;
   linkClass?: string;
   iconClass?: string;
 };
 
-type Button = {
+export type Button = {
   title: string;
   type: 'button' | 'submit' | 'reset';
 };
 
-type Input = {
+export type Input = {
   type: string;
   label?: string;
   value?: string;
@@ -62,7 +62,7 @@ type Input = {
   placeholder?: string;
 };
 
-type Textarea = {
+export type Textarea = {
   cols?: number;
   rows?: number;
   label?: string;
@@ -70,27 +70,27 @@ type Textarea = {
   placeholder?: string;
 };
 
-type Checkbox = {
+export type Checkbox = {
   label: string;
   value: string;
 };
 
-type Radio = {
+export type Radio = {
   label: string;
 };
 
-type RadioBtn = {
+export type RadioBtn = {
   label?: string;
   radios: Array<Radio>;
 };
 
-type SmallForm = {
+export type SmallForm = {
   icon?: Icon;
   input: Input;
   btn: Button;
 };
 
-type FormProps = {
+export type FormProps = {
   title?: string;
   description?: string;
   inputs: Array<Input>;
@@ -102,13 +102,13 @@ type FormProps = {
   containerClass?: string;
 };
 
-type Image = {
+export type Image = {
   link?: string;
   src: string | StaticImageData;
   alt: string;
 };
 
-type Item = {
+export type Item = {
   title?: string | boolean | number;
   description?: string | Array<string>;
   href?: string;
@@ -117,7 +117,7 @@ type Item = {
   callToAction?: CallToActionType;
 };
 
-type ItemGrid = {
+export type ItemGrid = {
   id?: string;
   items?: Array<Item>;
   columns?: number;
@@ -131,7 +131,7 @@ type ItemGrid = {
   actionClass?: string;
 };
 
-type Timeline = {
+export type Timeline = {
   id?: string;
   items?: Array<Item>;
   defaultIcon?: Icon;
@@ -142,7 +142,7 @@ type Timeline = {
   descriptionClass?: string;
 };
 
-type Team = {
+export type Team = {
   name: string;
   occupation: string;
   image: Image;
@@ -155,7 +155,7 @@ type Team = {
   itemsClass?: string;
 };
 
-type Testimonial = {
+export type Testimonial = {
   testimonial?: string;
   startSlice?: number;
   endSlice?: number;
@@ -175,14 +175,14 @@ type Testimonial = {
   testimonialClass?: string;
 };
 
-type Link = {
+export type Link = {
   label?: string;
   href?: string;
   ariaLabel?: string;
   icon?: Icon;
 };
 
-type Price = {
+export type Price = {
   title?: string;
   subtitle?: string;
   description?: string;
@@ -194,28 +194,28 @@ type Price = {
   ribbonTitle?: string;
 };
 
-type Column = {
+export type Column = {
   title: string;
   items: Array<Item>;
   callToAction?: CallToActionType;
 };
 
-type MenuLink = Link & {
+export type MenuLink = Link & {
   links?: Array<Link>;
 };
 
-type Links = {
+export type Links = {
   title?: string;
   links?: Array<Link>;
   texts?: Array<string>;
 };
 
-type Tab = {
+export type Tab = {
   link?: Link;
   items: Array<Item>;
 };
 
-type Dropdown = {
+export type Dropdown = {
   options: Tab[];
   activeTab: number;
   onActiveTabSelected: (index: number) => void;
@@ -223,13 +223,13 @@ type Dropdown = {
   iconDown?: ReactElement;
 };
 
-type ToggleMenuProps = {
+export type ToggleMenuProps = {
   handleToggleMenuOnClick: MouseEventHandler<HTMLButtonElement>;
   isToggleMenuOpen: boolean;
 };
 
 // WIDGETS
-type HeroProps = {
+export type HeroProps = {
   title?: string | ReactElement;
   subtitle?: string | ReactElement;
   tagline?: string;
@@ -238,7 +238,7 @@ type HeroProps = {
   image?: Image;
 };
 
-type FAQsProps = Widget & {
+export type FAQsProps = Widget & {
   header?: Header;
   items?: Array<Item>;
   columns?: number;
@@ -246,21 +246,21 @@ type FAQsProps = Widget & {
   callToAction?: CallToActionType;
 };
 
-type CollapseProps = {
+export type CollapseProps = {
   items: Array<Item>;
   classCollapseItem?: string;
   iconUp?: ReactElement;
   iconDown?: ReactElement;
 };
 
-type CallToActionProps = Widget & {
+export type CallToActionProps = Widget & {
   title: string;
   subtitle: string;
   callToAction?: CallToActionType;
   items?: Array<Item>;
 };
 
-type FeaturesProps = Widget & {
+export type FeaturesProps = Widget & {
   header?: Header;
   items?: Array<Item>;
   /** How many columns should it have? */
@@ -272,7 +272,7 @@ type FeaturesProps = Widget & {
   isAfterContent?: boolean;
 };
 
-type ContentProps = Widget & {
+export type ContentProps = Widget & {
   header?: Header;
   content?: string;
   items?: Array<Item>;
@@ -281,7 +281,7 @@ type ContentProps = Widget & {
   isAfterContent?: boolean;
 };
 
-type StepsProps = Widget & {
+export type StepsProps = Widget & {
   header?: Header;
   items: Array<Item>;
   /** Do you want the image to be displayed? */
@@ -291,18 +291,18 @@ type StepsProps = Widget & {
   isReversed?: boolean;
 };
 
-type TeamProps = Widget & {
+export type TeamProps = Widget & {
   header?: Header;
   teams: Array<Team>;
 };
 
-type AnnouncementProps = {
+export type AnnouncementProps = {
   title: string;
   callToAction?: CallToActionType;
   callToAction2?: CallToActionType;
 };
 
-type TestimonialsProps = Widget & {
+export type TestimonialsProps = Widget & {
   header?: Header;
   testimonials: Array<Testimonial>;
   isTestimonialUp?: boolean;
@@ -312,32 +312,32 @@ type TestimonialsProps = Widget & {
   callToAction?: CallToActionType;
 };
 
-type PricingProps = Widget & {
+export type PricingProps = Widget & {
   header?: Header;
   prices: Array<Price>;
 };
 
-type ComparisonProps = Widget & {
+export type ComparisonProps = Widget & {
   header?: Header;
   columns: Array<Column>;
 };
 
-type StatsProps = Widget & {
+export type StatsProps = Widget & {
   items: Array<Item>;
 };
 
-type SocialProofProps = Widget & {
+export type SocialProofProps = Widget & {
   images: Array<Image>;
 };
 
-type ContactProps = Widget & {
+export type ContactProps = Widget & {
   header?: Header;
   content?: string;
   items?: Array<Item>;
   form: FormProps;
 };
 
-type FooterProps = {
+export type FooterProps = {
   title?: string;
   links?: Array<Link>;
   columns: Array<Links>;
@@ -346,7 +346,7 @@ type FooterProps = {
   theme?: string;
 };
 
-type HeaderProps = {
+export type HeaderProps = {
   links?: Array<MenuLink>;
   actions?: Array<CallToActionType>;
   // actions?: Array<ActionLink>;
