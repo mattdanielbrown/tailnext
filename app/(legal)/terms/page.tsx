@@ -14,7 +14,7 @@ const Page = () => {
 
   return (
     <div
-      className="prose-md prose-headings:font-heading prose-headings:leading-tighter container prose prose-lg mx-auto mt-8 max-w-3xl px-6 dark:prose-invert lg:prose-xl prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg dark:prose-headings:text-slate-300 dark:prose-a:text-primary-400 sm:px-6"
+      className="container prose prose-lg mx-auto mt-8 max-w-3xl px-6 dark:prose-invert lg:prose-xl prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg dark:prose-headings:text-slate-300 dark:prose-a:text-primary-400 sm:px-6"
       dangerouslySetInnerHTML={{
         __html: md({
           html: true,

@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <footer className="relative border-t border-gray-200 dark:border-slate-800">
-      <div className="dark:bg-dark pointer-events-none absolute inset-0"></div>
+      <div className="pointer-events-none absolute inset-0"></div>
       <div className="relative mx-auto max-w-7xl px-4 dark:text-slate-300 sm:px-6">
         <div className="grid grid-cols-12 gap-4 gap-y-8 py-8 sm:gap-8 md:py-12">
           <div className="col-span-12 lg:col-span-4">
@@ -16,7 +16,7 @@ const Footer = () => {
                 {title}
               </Link>
             </div>
-            <div className="text-muted text-sm">
+            <div className="text-sm">
               <ul className="mb-4 flex pr-2 md:order-1 md:mb-0 rtl:pl-2 rtl:pr-0">
                 {links &&
                   links.map(({ label, href }, index) => (
@@ -42,7 +42,7 @@ const Footer = () => {
                   links.map(({ label, href }, index2) => (
                     <li key={`item-column-link-${index2}`} className="mb-2">
                       <a
-                        className="text-muted transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
+                        className="transition duration-150 ease-in-out hover:text-gray-700 hover:underline dark:text-gray-400"
                         aria-label={label}
                         href={href}
                       >
@@ -59,7 +59,7 @@ const Footer = () => {
             {socials.map(({ label, icon: Icon, href }, index) => (
               <li key={`item-social-${index}`}>
                 <a
-                  className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                  className="inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                   aria-label={label}
                   href={href}
                 >

@@ -22,7 +22,7 @@ const Features4 = ({
   >
     {header && <Headline header={header} titleClass="text-4xl md:text-5xl" />}
     {isImageDisplayed && (
-      <div aria-hidden="true" className="aspect-w-16 aspect-h-7">
+      <div aria-hidden="true" className="">
         {image && (
           <Image
             className="mx-auto h-80 w-full rounded-xl bg-gray-500 object-cover shadow-lg"

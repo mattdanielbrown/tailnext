@@ -37,7 +37,7 @@ export default async function Page(props) {
             <time dateTime={post.publishDate}>{getFormattedDate(post.publishDate)}</time> ~{' '}
             {/* {Math.ceil(post.readingTime)} min read */}
           </p>
-          <h1 className="leading-tighter font-heading mx-auto mb-8 max-w-3xl px-4 text-4xl font-bold tracking-tighter sm:px-6 md:text-5xl">
+          <h1 className="mx-auto mb-8 max-w-3xl px-4 text-4xl font-bold tracking-tighter sm:px-6 md:text-5xl">
             {post.title}
           </h1>
           {post.image ? (
@@ -58,7 +58,7 @@ export default async function Page(props) {
           )}
         </header>
         <div
-          className="prose-md prose-headings:font-heading prose-headings:leading-tighter container prose prose-lg mx-auto mt-8 max-w-3xl px-6 dark:prose-invert lg:prose-xl prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg dark:prose-headings:text-slate-300 dark:prose-a:text-primary-400 sm:px-6"
+          className="container prose prose-lg mx-auto mt-8 max-w-3xl px-6 dark:prose-invert lg:prose-xl prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg dark:prose-headings:text-slate-300 dark:prose-a:text-primary-400 sm:px-6"
           dangerouslySetInnerHTML={{
             __html: md({
               html: true,
