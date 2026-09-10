@@ -51,3 +51,25 @@
 @utility card {
   @apply w-full rounded-lg border border-gray-200 bg-white px-6 py-8 shadow-sm backdrop-blur-sm dark:border-gray-700 dark:bg-slate-900;
 }
+
+/*
+  rehype-pretty-code compila cada bloque con los dos temas de Shiki a la vez y deja
+  ambos como variables CSS en cada span. Hay que aplicar explícitamente la que toca:
+  sin estas reglas el código hereda el color de `prose` y sale sin resaltar.
+  Marca los bloques con data-theme, no con una clase .shiki.
+*/
+[data-theme],
+[data-theme] span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+
+.dark [data-theme],
+.dark [data-theme] span {
+  color: var(--shiki-dark);
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}

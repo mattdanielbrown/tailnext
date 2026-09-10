@@ -4,7 +4,7 @@ import nextTypeScript from 'eslint-config-next/typescript';
 const config = [
   {
     // src/stories queda fuera hasta que Storybook vuelva; sus imports no resuelven.
-    ignores: ['.next/**', 'out/**', 'node_modules/**', 'next-env.d.ts', 'src/stories/**'],
+    ignores: ['.next/**', 'out/**', 'node_modules/**', 'next-env.d.ts', 'src/stories/**', '.content-collections/**'],
   },
   ...nextCoreWebVitals,
   ...nextTypeScript,

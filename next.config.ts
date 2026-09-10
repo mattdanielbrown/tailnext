@@ -1,3 +1,4 @@
+import { withContentCollections } from '@content-collections/next';
 import type { NextConfig } from 'next';
 
 // Ruta relativa a propósito: el archivo de configuración se carga fuera del
@@ -24,4 +25,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+// withContentCollections debe envolver por fuera: ejecuta el builder al cargar
+// la config y devuelve nextConfig intacto, sin tocar el bundler.
+export default withContentCollections(nextConfig);
