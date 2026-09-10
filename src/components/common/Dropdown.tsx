@@ -28,7 +28,7 @@ const Dropdown = ({ options, activeTab, onActiveTabSelected, iconUp, iconDown }:
     return () => {
       window.removeEventListener('click', handler);
     };
-  });
+  }, []);
 
   return (
     <div className="relative mt-4 rounded-md border border-gray-400 text-left">
