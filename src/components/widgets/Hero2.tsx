@@ -8,9 +8,9 @@ const Hero2 = ({ title, subtitle, tagline, callToAction, callToAction2, image }:
       <div className="mx-auto max-w-7xl px-4 pt-[72px] sm:px-6 md:flex md:h-screen 2xl:h-auto">
         <div className="block py-12 text-center md:flex md:py-12 md:text-left lg:py-16">
           <div className="mx-auto flex max-w-5xl basis-[56%] items-center">
-            <div className="max-w-3xl pb-12 pr-0 md:py-0 md:pb-0 md:pr-8 lg:pr-16">
+            <div className="max-w-3xl pr-0 pb-12 md:py-0 md:pr-8 md:pb-0 lg:pr-16">
               {tagline && (
-                <p className="text-base font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-200">
+                <p className="text-base font-semibold tracking-wide text-primary-600 uppercase dark:text-primary-200">
                   {tagline}
                 </p>
               )}

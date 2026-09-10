@@ -16,7 +16,7 @@ const FAQs = ({ header, items, columns, id, hasBackground = false }: FAQsProps) 
       panelClass="flex max-w-full"
       titleClass="text-lg font-semibold mb-2"
       descriptionClass="mt-0.5"
-      iconClass="flex-shrink-0 mr-2 mt-1 w-6 h-6 text-primary-800 dark:text-primary-600"
+      iconClass="shrink-0 mr-2 mt-1 w-6 h-6 text-primary-800 dark:text-primary-600"
     />
   </WidgetWrapper>
 );

@@ -37,9 +37,9 @@ const ItemGrid = ({
               <div className={panelClass}>
                 <div className="flex justify-center">
                   {Icon ? (
-                    <Icon className={twMerge('mr-2 h-6 w-6 rtl:ml-2 rtl:mr-0', iconClass)} />
+                    <Icon className={twMerge('mr-2 h-6 w-6 rtl:mr-0 rtl:ml-2', iconClass)} />
                   ) : DefaultIcon ? (
-                    <DefaultIcon className={twMerge('mr-2 h-6 w-6 rtl:ml-2 rtl:mr-0', iconClass)} />
+                    <DefaultIcon className={twMerge('mr-2 h-6 w-6 rtl:mr-0 rtl:ml-2', iconClass)} />
                   ) : null}
                 </div>
                 <div className="mt-0.5">

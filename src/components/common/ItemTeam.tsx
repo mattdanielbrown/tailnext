@@ -28,14 +28,14 @@ const ItemTeam = ({
                 href && (
                   <li
                     key={`team-${index2}`}
-                    className="m-1 flex items-center justify-center rounded text-primary-700 hover:text-gray-500"
+                    className="m-1 flex items-center justify-center rounded-sm text-primary-700 hover:text-gray-500"
                   >
                     <a
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={title as string}
-                      className="flex items-center justify-center rounded-sm bg-transparent p-0.5 text-primary-900 hover:bg-primary-900 hover:text-slate-200 hover:dark:bg-slate-800 hover:dark:text-slate-200"
+                      className="flex items-center justify-center rounded-xs bg-transparent p-0.5 text-primary-900 hover:bg-primary-900 hover:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-slate-200"
                     >
                       <Icon className="h-6 w-6 p-0.5" />
                     </a>

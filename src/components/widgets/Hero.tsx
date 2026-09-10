@@ -9,7 +9,7 @@ const Hero = ({ title, subtitle, tagline, callToAction, callToAction2, image }: 
         <div className="py-12 md:py-20">
           <div className="mx-auto max-w-4xl pb-10 text-center md:pb-16">
             {tagline && (
-              <p className="text-base font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-200">
+              <p className="text-base font-semibold tracking-wide text-primary-600 uppercase dark:text-primary-200">
                 {tagline}
               </p>
             )}

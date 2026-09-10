@@ -61,7 +61,7 @@ const Form = ({
 
               return (
                 <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
-                  <label htmlFor={fieldName} className="pb-1 text-xs uppercase tracking-wider">
+                  <label htmlFor={fieldName} className="pb-1 text-xs tracking-wider uppercase">
                     {label}
                   </label>
                   <input
@@ -72,7 +72,7 @@ const Form = ({
                     value={inputValues[fieldName] ?? ''}
                     onChange={changeInputValueHandler}
                     placeholder={placeholder}
-                    className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                    className="mb-2 w-full rounded-md border border-gray-400 py-2 pr-4 pl-2 shadow-md sm:mb-0 dark:text-gray-300"
                   />
                 </div>
               );
@@ -81,7 +81,7 @@ const Form = ({
         {/* Radio buttons */}
         {radioBtns && (
           <div className="mx-0 mb-1 sm:mb-3">
-            <span className="pb-1 text-xs uppercase tracking-wider">{radioBtns?.label}</span>
+            <span className="pb-1 text-xs tracking-wider uppercase">{radioBtns?.label}</span>
             <div className="flex flex-wrap">
               {radioBtns.radios.map(({ label }, index) => (
                 <div key={`radio-btn-${index}`} className="mr-4 items-baseline">
@@ -105,7 +105,7 @@ const Form = ({
         {/* Textarea */}
         {textarea && (
           <div className={`mx-0 mb-1 sm:mb-4`}>
-            <label htmlFor={textarea.name} className="pb-1 text-xs uppercase tracking-wider">
+            <label htmlFor={textarea.name} className="pb-1 text-xs tracking-wider uppercase">
               {textarea.label}
             </label>
             <textarea
@@ -116,7 +116,7 @@ const Form = ({
               value={textareaValues}
               onChange={(e) => changeTextareaHandler(e)}
               placeholder={textarea.placeholder}
-              className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+              className="mb-2 w-full rounded-md border border-gray-400 py-2 pr-4 pl-2 shadow-md sm:mb-0 dark:text-gray-300"
             />
           </div>
         )}

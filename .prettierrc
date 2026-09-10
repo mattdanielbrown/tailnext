@@ -6,5 +6,5 @@
   "printWidth": 120,
   "tabWidth": 2,
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindConfig": "./tailwind.config.js"
+  "tailwindStylesheet": "./src/assets/styles/base.css"
 }

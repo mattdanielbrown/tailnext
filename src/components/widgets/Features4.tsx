@@ -43,7 +43,7 @@ const Features4 = ({
       panelClass={`flex max-w-full ${columns === 2 ? ' sm:max-w-md mx-auto' : ''}`}
       titleClass="text-lg font-semibold mb-2"
       descriptionClass="mt-0.5"
-      iconClass="flex-shrink-0 mr-4 mt-1 w-6 h-6 text-primary-800 dark:text-primary-600"
+      iconClass="shrink-0 mr-4 mt-1 w-6 h-6 text-primary-800 dark:text-primary-600"
     />
   </WidgetWrapper>
 );

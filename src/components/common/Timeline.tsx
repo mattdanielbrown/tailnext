@@ -17,7 +17,7 @@ const Timeline = ({
         <div className={twMerge('', containerClass)}>
           {items.map(({ title, description, icon: Icon }, index = 0) => (
             <div key={id ? `item-${id}-${index}` : `item-grid-${index}`} className={twMerge('flex', panelClass)}>
-              <div className="mr-4 flex flex-col items-center rtl:ml-4 rtl:mr-0">
+              <div className="mr-4 flex flex-col items-center rtl:mr-0 rtl:ml-4">
                 <div
                   className={`flex items-center justify-center ${
                     index !== items.length - 1 ? '' : 'rounded-full bg-primary-900 text-slate-200'

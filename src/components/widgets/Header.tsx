@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <header
-      className={`top-0 z-40 mx-auto w-full flex-none bg-white transition-all duration-100 ease-in dark:bg-slate-900 md:bg-white/90 md:backdrop-blur-sm dark:md:bg-slate-900/90 ${
+      className={`top-0 z-40 mx-auto w-full flex-none bg-white transition-all duration-100 ease-in md:bg-white/90 md:backdrop-blur-xs dark:bg-slate-900 dark:md:bg-slate-900/90 ${
         isSticky ? 'sticky' : 'relative'
       } ${isToggleMenuOpen ? 'h-screen md:h-auto' : 'h-auto'}`}
       id="header"
@@ -66,7 +66,7 @@ const Header = () => {
         <div
           className={`flex justify-between px-3 py-3 md:px-0 md:py-0 ${
             isToggleMenuOpen
-              ? 'border-b border-gray-200 bg-white dark:border-slate-600 dark:bg-slate-900 md:border-none md:bg-transparent md:dark:bg-transparent'
+              ? 'border-b border-gray-200 bg-white md:border-none md:bg-transparent dark:border-slate-600 dark:bg-slate-900 md:dark:bg-transparent'
               : ''
           }`}
         >
@@ -86,12 +86,12 @@ const Header = () => {
         <nav
           className={`${isToggleMenuOpen ? 'block px-3' : 'hidden'} h-screen md:w-full ${
             position === 'right' ? 'justify-end' : position === 'left' ? 'justify-start' : 'justify-center'
-          } w-auto overflow-y-auto dark:text-slate-200 md:mx-5 md:flex md:h-auto md:items-center md:overflow-visible`}
+          } w-auto overflow-y-auto md:mx-5 md:flex md:h-auto md:items-center md:overflow-visible dark:text-slate-200`}
           aria-label="Main navigation"
         >
           <ul
             ref={ref}
-            className="mb-36 mt-2 flex w-full flex-col text-xl md:m-0 md:w-auto md:flex-row md:self-center md:pt-0 md:text-base"
+            className="mt-2 mb-36 flex w-full flex-col text-xl md:m-0 md:w-auto md:flex-row md:self-center md:pt-0 md:text-base"
           >
             {links &&
               links.map(({ label, href, icon: Icon, links }, index) => (
@@ -110,7 +110,7 @@ const Header = () => {
                           <Icon
                             className={`${
                               isDropdownOpen[index] ? 'rotate-180' : ''
-                            } ml-0.5 hidden h-3.5 w-3.5 md:inline rtl:ml-0 rtl:mr-0.5`}
+                            } ml-0.5 hidden h-3.5 w-3.5 md:inline rtl:mr-0.5 rtl:ml-0`}
                           />
                         )}
                       </button>
@@ -122,7 +122,7 @@ const Header = () => {
                         {links.map(({ label: label2, href: href2 }, index2) => (
                           <li key={`item-link-${index2}`}>
                             <Link
-                              className="block px-5 py-2 first:rounded-t last:rounded-b dark:hover:bg-gray-700 md:hover:bg-gray-200"
+                              className="block px-5 py-2 first:rounded-t last:rounded-b md:hover:bg-gray-200 dark:hover:bg-gray-700"
                               href={href2 as string}
                               onClick={() =>
                                 isToggleMenuOpen ? handleToggleMenuOnClick() : handleCloseDropdownOnClick(index)
@@ -150,13 +150,13 @@ const Header = () => {
         <div
           className={`${
             isToggleMenuOpen ? 'block' : 'hidden'
-          } fixed bottom-0 left-0 w-full justify-end border-t border-gray-200 bg-white p-3 dark:border-slate-600 dark:bg-slate-900 md:static md:mb-0 md:flex md:w-auto md:self-center md:border-none md:bg-transparent md:p-0 md:dark:bg-transparent`}
+          } fixed bottom-0 left-0 w-full justify-end border-t border-gray-200 bg-white p-3 md:static md:mb-0 md:flex md:w-auto md:self-center md:border-none md:bg-transparent md:p-0 dark:border-slate-600 dark:bg-slate-900 md:dark:bg-transparent`}
         >
           <div className="flex w-full items-center justify-between md:w-auto">
             {showToggleTheme && <ToggleDarkMode />}
             {showRssFeed && (
               <Link
-                className="inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                className="inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 focus:outline-hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                 aria-label="RSS Feed"
                 href=""
               >
@@ -164,7 +164,7 @@ const Header = () => {
               </Link>
             )}
             {actions && actions.length > 0 && (
-              <div className="ml-4 flex w-max flex-wrap justify-end rtl:ml-0 rtl:mr-4">
+              <div className="ml-4 flex w-max flex-wrap justify-end rtl:mr-4 rtl:ml-0">
                 {actions.map((callToAction, index) => (
                   <CTA
                     key={`item-action-${index}`}

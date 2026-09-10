@@ -11,14 +11,14 @@ const Comparison = ({ header, columns, id, hasBackground = false }: ComparisonPr
       {columns.map(({ title, items, callToAction }, index) => (
         <div
           key={`column-content-${index}`}
-          className={`relative mx-auto w-full min-w-fit max-w-3xl select-none border-r border-solid border-gray-300 px-4 py-4 first-of-type:sticky first-of-type:left-0 first-of-type:z-10 first-of-type:w-auto ${
+          className={`relative mx-auto w-full max-w-3xl min-w-fit border-r border-solid border-gray-300 px-4 py-4 select-none first-of-type:sticky first-of-type:left-0 first-of-type:z-10 first-of-type:w-auto ${
             hasBackground
-              ? 'first-of-type:bg-primary-50 first-of-type:dark:bg-slate-800'
-              : 'first-of-type:bg-white first-of-type:dark:bg-slate-900'
-          } first-of-type:pl-6 last-of-type:border-none dark:border-slate-500 md:px-5 md:first-of-type:w-full md:first-of-type:pl-5`}
+              ? 'first-of-type:bg-primary-50 dark:first-of-type:bg-slate-800'
+              : 'first-of-type:bg-white dark:first-of-type:bg-slate-900'
+          } first-of-type:pl-6 last-of-type:border-none md:px-5 md:first-of-type:w-full md:first-of-type:pl-5 dark:border-slate-500`}
         >
           <h3
-            className={`mb-4 border-b border-solid border-gray-300 pb-4 text-lg font-medium uppercase leading-6 text-gray-900 dark:border-slate-500 dark:text-white ${
+            className={`mb-4 border-b border-solid border-gray-300 pb-4 text-lg leading-6 font-medium text-gray-900 uppercase dark:border-slate-500 dark:text-white ${
               index === 0 ? 'text-left' : 'text-center'
             }`}
           >

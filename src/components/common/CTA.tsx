@@ -16,12 +16,12 @@ const CTA = ({ callToAction, containerClass, linkClass, iconClass }: LinkOrButto
               target="_blank"
               rel="noopener noreferrer"
             >
-              {Icon && <Icon className={twMerge(`h-5 w-5 ${text ? 'mr-1 rtl:ml-1 rtl:mr-0' : ''}`, iconClass)} />}
+              {Icon && <Icon className={twMerge(`h-5 w-5 ${text ? 'mr-1 rtl:mr-0 rtl:ml-1' : ''}`, iconClass)} />}
               {text}
             </Link>
           ) : (
             <Link className={twMerge('inline-flex w-full items-center justify-center sm:mb-0', linkClass)} href={href}>
-              {Icon && <Icon className={twMerge(`h-5 w-5 ${text ? 'mr-1 rtl:ml-1 rtl:mr-0' : ''}`, iconClass)} />}
+              {Icon && <Icon className={twMerge(`h-5 w-5 ${text ? 'mr-1 rtl:mr-0 rtl:ml-1' : ''}`, iconClass)} />}
               {text}
             </Link>
           )}

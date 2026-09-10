@@ -28,13 +28,13 @@ const Testimonials2 = ({ header, testimonials, isTestimonialUp, id, hasBackgroun
   return (
     <WidgetWrapper id={id ? id : ''} hasBackground={hasBackground} containerClass="">
       {header && <Headline header={header} titleClass="text-2xl sm:text-3xl" />}
-      <div className="card mx-auto flex max-w-6xl overflow-hidden">
+      <div className="mx-auto flex card max-w-6xl overflow-hidden">
         {testimonials.map(
           ({ name, job, testimonial, image }, index) =>
             testimonial && (
               <div
                 key={`item-testimonial-${index}`}
-                className="mx-auto inline-flex min-w-full max-w-6xl flex-col items-stretch justify-center transition-all duration-300"
+                className="mx-auto inline-flex max-w-6xl min-w-full flex-col items-stretch justify-center transition-all duration-300"
                 style={{ transform: `translate(-${activeIndex * 100}%)` }}
               >
                 <ItemTestimonial
@@ -44,7 +44,7 @@ const Testimonials2 = ({ header, testimonials, isTestimonialUp, id, hasBackgroun
                   isTestimonialUp={isTestimonialUp}
                   image={image}
                   containerClass="flex w-full h-full px-4 py-8 text-center lg:py-16 lg:px-6"
-                  panelClass="w-full md:max-w-md lg:max-w-screen-sm mx-auto"
+                  panelClass="w-full md:max-w-md lg:max-w-(--breakpoint-sm) mx-auto"
                   imageClass="w-6 h-6 rounded-full"
                   dataClass="mt-8 space-x-3 mx-auto"
                   nameJobClass="flex flex-row items-center divide-x-2 divide-gray-500 dark:divide-gray-700"

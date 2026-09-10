@@ -26,9 +26,9 @@ const Collapse = ({ items, classCollapseItem, iconUp, iconDown }: CollapseProps)
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => handleSetIndex(index)}
-                  className="flex w-full cursor-pointer select-none justify-between text-left"
+                  className="flex w-full cursor-pointer justify-between text-left select-none"
                 >
-                  <span className="w-full pr-2 text-lg font-medium leading-6 text-gray-900 dark:text-slate-300">
+                  <span className="w-full pr-2 text-lg leading-6 font-medium text-gray-900 dark:text-slate-300">
                     {title}
                   </span>
                   {iconDown && iconUp ? (

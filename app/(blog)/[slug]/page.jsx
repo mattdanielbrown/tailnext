@@ -43,7 +43,7 @@ export default async function Page(props) {
           {post.image ? (
             <Image
               src={post.image}
-              className="mx-auto mb-6 mt-4 max-w-full bg-gray-400 dark:bg-slate-700 sm:rounded-md lg:max-w-6xl"
+              className="mx-auto mt-4 mb-6 max-w-full bg-gray-400 sm:rounded-md lg:max-w-6xl dark:bg-slate-700"
               sizes="(max-width: 900px) 400px, 900px"
               alt={post.description}
               loading="eager"
@@ -58,7 +58,7 @@ export default async function Page(props) {
           )}
         </header>
         <div
-          className="container prose prose-lg mx-auto mt-8 max-w-3xl px-6 dark:prose-invert lg:prose-xl prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg dark:prose-headings:text-slate-300 dark:prose-a:text-primary-400 sm:px-6"
+          className="container mx-auto prose prose-lg mt-8 max-w-3xl px-6 sm:px-6 lg:prose-xl dark:prose-invert prose-headings:font-bold prose-headings:tracking-tighter dark:prose-headings:text-slate-300 prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-img:rounded-md prose-img:shadow-lg"
           dangerouslySetInnerHTML={{
             __html: md({
               html: true,

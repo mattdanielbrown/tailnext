@@ -16,7 +16,7 @@ const Headline = ({ header, containerClass, titleClass, subtitleClass }: Headlin
           )}
         >
           {tagline && (
-            <p className="text-base font-semibold uppercase tracking-wide text-primary-600 dark:text-primary-200">
+            <p className="text-base font-semibold tracking-wide text-primary-600 uppercase dark:text-primary-200">
               {tagline}
             </p>
           )}

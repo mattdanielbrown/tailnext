@@ -58,7 +58,7 @@ const Dropdown = ({ options, activeTab, onActiveTabSelected, iconUp, iconDown }:
         aria-haspopup="true"
         aria-expanded={isDropdownOpen}
         aria-controls={panelId}
-        className="flex w-full cursor-pointer select-none items-center justify-between rounded-md p-3"
+        className="flex w-full cursor-pointer items-center justify-between rounded-md p-3 select-none"
       >
         <span className="text-lg">{selectedOption}</span>
         {iconDown && iconUp ? (

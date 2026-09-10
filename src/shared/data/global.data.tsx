@@ -207,8 +207,8 @@ export const footerData: FooterProps = {
     { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/arthelokyo/tailnext' },
   ],
   footNote: (
-    <div className="mr-4 text-sm rtl:ml-4 rtl:mr-0">
-      <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(https://arthelokyo.com/favicon.svg)] bg-cover md:-mt-0.5 md:h-6 md:w-6 rtl:float-right rtl:ml-1.5 rtl:mr-0"></span>
+    <div className="mr-4 text-sm rtl:mr-0 rtl:ml-4">
+      <span className="float-left mr-1.5 h-5 w-5 rounded-xs bg-[url(https://arthelokyo.com/favicon.svg)] bg-cover md:-mt-0.5 md:h-6 md:w-6 rtl:float-right rtl:mr-0 rtl:ml-1.5"></span>
       <span>
         Made by{' '}
         <a
@@ -258,8 +258,8 @@ export const footerData2: FooterProps = {
     { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/arthelokyo/tailnext' },
   ],
   footNote: (
-    <div className="mr-4 text-sm rtl:ml-4 rtl:mr-0">
-      <span className="float-left mr-1.5 h-5 w-5 rounded-sm bg-[url(https://arthelokyo.com/favicon.svg)] bg-cover md:-mt-0.5 md:h-6 md:w-6 rtl:float-right rtl:ml-1.5 rtl:mr-0"></span>
+    <div className="mr-4 text-sm rtl:mr-0 rtl:ml-4">
+      <span className="float-left mr-1.5 h-5 w-5 rounded-xs bg-[url(https://arthelokyo.com/favicon.svg)] bg-cover md:-mt-0.5 md:h-6 md:w-6 rtl:float-right rtl:mr-0 rtl:ml-1.5"></span>
       <span>
         Made by{' '}
         <a

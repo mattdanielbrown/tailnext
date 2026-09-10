@@ -22,7 +22,7 @@ const Steps = ({
     >
       <div
         className={`md:py-4 ${
-          isImageDisplayed ? 'md:basis-1/2 md:pr-16 md:rtl:pl-16 md:rtl:pr-0' : 'mx-auto max-w-4xl md:self-center'
+          isImageDisplayed ? 'md:basis-1/2 md:pr-16 md:rtl:pr-0 md:rtl:pl-16' : 'mx-auto max-w-4xl md:self-center'
         }`}
       >
         {header && (
@@ -44,7 +44,7 @@ const Steps = ({
               height={768}
               alt={image.alt}
               placeholder="blur"
-              className="inset-0 w-full rounded-md bg-gray-400 object-cover object-top shadow-lg dark:bg-slate-700 md:absolute md:h-full"
+              className="inset-0 w-full rounded-md bg-gray-400 object-cover object-top shadow-lg md:absolute md:h-full dark:bg-slate-700"
               quality={50}
             />
           )}
