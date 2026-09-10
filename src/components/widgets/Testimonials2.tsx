@@ -28,13 +28,13 @@ const Testimonials2 = ({ header, testimonials, isTestimonialUp, id, hasBackgroun
   return (
     <WidgetWrapper id={id ? id : ''} hasBackground={hasBackground} containerClass="">
       {header && <Headline header={header} titleClass="text-2xl sm:text-3xl" />}
-      <div className="card flex overflow-hidden mx-auto max-w-6xl">
+      <div className="card mx-auto flex max-w-6xl overflow-hidden">
         {testimonials.map(
           ({ name, job, testimonial, image }, index) =>
             testimonial && (
               <div
                 key={`item-testimonial-${index}`}
-                className="mx-auto inline-flex flex-col items-stretch justify-center min-w-full transition-all duration-300 linear max-w-6xl"
+                className="linear mx-auto inline-flex min-w-full max-w-6xl flex-col items-stretch justify-center transition-all duration-300"
                 style={{ transform: `translate(-${activeIndex * 100}%)` }}
               >
                 <ItemTestimonial
@@ -52,10 +52,10 @@ const Testimonials2 = ({ header, testimonials, isTestimonialUp, id, hasBackgroun
                   jobClass="pl-3 text-sm font-light text-gray-500 dark:text-gray-400"
                   testimonialClass="text-2xl font-medium text-gray-900 dark:text-white"
                 />
-                <div className="md:absolute md:inset-0 flex items-center justify-center md:justify-between p-4 mb-6 md:mb-0">
+                <div className="mb-6 flex items-center justify-center p-4 md:absolute md:inset-0 md:mb-0 md:justify-between">
                   <button onClick={() => handleGoToPrevious(index)}>
                     <IconChevronLeft
-                      className={`w-12 h-12 mr-4 ${
+                      className={`mr-4 h-12 w-12 ${
                         activeIndex === firstIndex
                           ? 'cursor-not-allowed text-gray-400 dark:text-gray-600'
                           : 'text-black dark:text-white'
@@ -64,7 +64,7 @@ const Testimonials2 = ({ header, testimonials, isTestimonialUp, id, hasBackgroun
                   </button>
                   <button onClick={() => handleGoToNext(index)}>
                     <IconChevronRight
-                      className={`w-12 h-12 ml-4 ${
+                      className={`ml-4 h-12 w-12 ${
                         activeIndex === lastIndex
                           ? 'cursor-not-allowed text-gray-400 dark:text-gray-600'
                           : 'text-black dark:text-white'

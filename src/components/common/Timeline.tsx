@@ -17,24 +17,24 @@ const Timeline = ({
         <div className={twMerge('', containerClass)}>
           {items.map(({ title, description, icon: Icon }, index = 0) => (
             <div key={id ? `item-${id}-${index}` : `item-grid-${index}`} className={twMerge('flex', panelClass)}>
-              <div className="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4">
+              <div className="mr-4 flex flex-col items-center rtl:ml-4 rtl:mr-0">
                 <div
                   className={`flex items-center justify-center ${
-                    index !== items.length - 1 ? '' : 'text-slate-200 rounded-full bg-primary-900'
+                    index !== items.length - 1 ? '' : 'rounded-full bg-primary-900 text-slate-200'
                   }`}
                 >
                   {Icon ? (
-                    <Icon className={twMerge('w-10 h-10 p-2 rounded-full border-2', iconClass)} />
+                    <Icon className={twMerge('h-10 w-10 rounded-full border-2 p-2', iconClass)} />
                   ) : DefaultIcon ? (
-                    <DefaultIcon className={twMerge('w-10 h-10 p-2 rounded-full border-2', iconClass)} />
+                    <DefaultIcon className={twMerge('h-10 w-10 rounded-full border-2 p-2', iconClass)} />
                   ) : null}
                 </div>
 
-                {index !== items.length - 1 && <div className="w-px h-full bg-black/10 dark:bg-slate-400/50" />}
+                {index !== items.length - 1 && <div className="h-full w-px bg-black/10 dark:bg-slate-400/50" />}
               </div>
               <div className={`pt-1 ${index !== items.length - 1 ? 'pb-8' : ''}`}>
                 {title && (
-                  <h3 className={twMerge('text-xl font-bold text-gray-900 dark:text-slate-300 mb-2', titleClass)}>
+                  <h3 className={twMerge('mb-2 text-xl font-bold text-gray-900 dark:text-slate-300', titleClass)}>
                     {title}
                   </h3>
                 )}

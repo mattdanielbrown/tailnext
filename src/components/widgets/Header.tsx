@@ -62,11 +62,11 @@ const Header = () => {
       } ${isToggleMenuOpen ? 'h-screen md:h-auto' : 'h-auto'}`}
       id="header"
     >
-      <div className="mx-auto w-full max-w-7xl md:flex md:justify-between md:py-3.5 md:px-4">
+      <div className="mx-auto w-full max-w-7xl md:flex md:justify-between md:px-4 md:py-3.5">
         <div
-          className={`flex justify-between py-3 px-3 md:py-0 md:px-0 ${
+          className={`flex justify-between px-3 py-3 md:px-0 md:py-0 ${
             isToggleMenuOpen
-              ? 'md:bg-transparent md:dark:bg-transparent md:border-none bg-white dark:bg-slate-900 border-b border-gray-200 dark:border-slate-600'
+              ? 'border-b border-gray-200 bg-white dark:border-slate-600 dark:bg-slate-900 md:border-none md:bg-transparent md:dark:bg-transparent'
               : ''
           }`}
         >
@@ -91,7 +91,7 @@ const Header = () => {
         >
           <ul
             ref={ref}
-            className="flex w-full flex-col mt-2 mb-36 md:m-0 text-xl md:w-auto md:flex-row md:self-center md:pt-0 md:text-base"
+            className="mb-36 mt-2 flex w-full flex-col text-xl md:m-0 md:w-auto md:flex-row md:self-center md:pt-0 md:text-base"
           >
             {links &&
               links.map(({ label, href, icon: Icon, links }, index) => (
@@ -107,19 +107,19 @@ const Header = () => {
                           <Icon
                             className={`${
                               isDropdownOpen[index] ? 'rotate-180' : ''
-                            } ml-0.5 rtl:ml-0 rtl:mr-0.5 hidden h-3.5 w-3.5 md:inline`}
+                            } ml-0.5 hidden h-3.5 w-3.5 md:inline rtl:ml-0 rtl:mr-0.5`}
                           />
                         )}
                       </button>
                       <ul
                         className={`${
                           isDropdownOpen[index] ? 'block' : 'md:hidden'
-                        } rounded pl-4 font-medium drop-shadow-xl md:absolute md:min-w-[200px] md:bg-white/90 md:pl-0 md:backdrop-blur-md dark:md:bg-slate-900/90 md:border md:border-gray-200 md:dark:border-slate-700`}
+                        } rounded pl-4 font-medium drop-shadow-xl md:absolute md:min-w-[200px] md:border md:border-gray-200 md:bg-white/90 md:pl-0 md:backdrop-blur-md md:dark:border-slate-700 dark:md:bg-slate-900/90`}
                       >
                         {links.map(({ label: label2, href: href2 }, index2) => (
                           <li key={`item-link-${index2}`}>
                             <Link
-                              className="whitespace-no-wrap block py-2 px-5 first:rounded-t last:rounded-b dark:hover:bg-gray-700 md:hover:bg-gray-200"
+                              className="whitespace-no-wrap block px-5 py-2 first:rounded-t last:rounded-b dark:hover:bg-gray-700 md:hover:bg-gray-200"
                               href={href2 as string}
                               onClick={() =>
                                 isToggleMenuOpen ? handleToggleMenuOnClick() : handleCloseDropdownOnClick(index)
@@ -147,7 +147,7 @@ const Header = () => {
         <div
           className={`${
             isToggleMenuOpen ? 'block' : 'hidden'
-          } fixed bottom-0 left-0 w-full justify-end p-3 md:static md:mb-0 md:flex md:w-auto md:self-center md:p-0 md:bg-transparent md:dark:bg-transparent md:border-none bg-white dark:bg-slate-900 border-t border-gray-200 dark:border-slate-600`}
+          } fixed bottom-0 left-0 w-full justify-end border-t border-gray-200 bg-white p-3 dark:border-slate-600 dark:bg-slate-900 md:static md:mb-0 md:flex md:w-auto md:self-center md:border-none md:bg-transparent md:p-0 md:dark:bg-transparent`}
         >
           <div className="flex w-full items-center justify-between md:w-auto">
             {showToggleTheme && <ToggleDarkMode />}
@@ -161,7 +161,7 @@ const Header = () => {
               </Link>
             )}
             {actions && actions.length > 0 && (
-              <div className="ml-4 rtl:ml-0 rtl:mr-4 flex w-max flex-wrap justify-end">
+              <div className="ml-4 flex w-max flex-wrap justify-end rtl:ml-0 rtl:mr-4">
                 {actions.map((callToAction, index) => (
                   <CTA
                     key={`item-action-${index}`}

@@ -15,7 +15,7 @@ const Comparison = ({ header, columns, id, hasBackground = false }: ComparisonPr
             hasBackground
               ? 'first-of-type:bg-primary-50 first-of-type:dark:bg-slate-800'
               : 'first-of-type:bg-white first-of-type:dark:bg-slate-900'
-          } first-of-type:pl-6 last-of-type:border-none dark:border-slate-500  md:px-5 md:first-of-type:w-full md:first-of-type:pl-5`}
+          } first-of-type:pl-6 last-of-type:border-none dark:border-slate-500 md:px-5 md:first-of-type:w-full md:first-of-type:pl-5`}
         >
           <h3
             className={`mb-4 border-b border-solid border-gray-300 pb-4 text-lg font-medium uppercase leading-6 text-gray-900 dark:border-slate-500 dark:text-white ${
