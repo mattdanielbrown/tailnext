@@ -228,11 +228,6 @@ type ToggleMenuProps = {
   isToggleMenuOpen: boolean;
 };
 
-type WindowSize = {
-  width: number;
-  height: number;
-};
-
 // WIDGETS
 type HeroProps = {
   title?: string | ReactElement;
