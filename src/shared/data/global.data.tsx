@@ -16,8 +16,8 @@ export const announcementData: AnnouncementProps = {
     href: 'https://nextjs.org/blog/next-14',
   },
   callToAction2: {
-    text: 'Follow @onWidget on Twitter',
-    href: 'https://twitter.com/intent/user?screen_name=onwidget',
+    text: 'Follow @arthelokyo on X',
+    href: 'https://x.com/arthelokyo',
   },
 };
 
@@ -70,7 +70,7 @@ export const headerData: HeaderProps = {
   actions: [
     {
       text: 'Download',
-      href: 'https://github.com/onwidget/tailnext',
+      href: 'https://github.com/arthelokyo/tailnext',
       targetBlank: true,
     },
   ],
@@ -204,19 +204,19 @@ export const footerData: FooterProps = {
     { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
     { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/arthelokyo/tailnext' },
   ],
   footNote: (
     <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm">
-      <span className="float-left rtl:float-right mr-1.5 rtl:mr-0 rtl:ml-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
+      <span className="float-left rtl:float-right mr-1.5 rtl:mr-0 rtl:ml-1.5 h-5 w-5 rounded-sm bg-[url(https://arthelokyo.com/favicon.svg)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
       <span>
         Made by{' '}
         <a
           className="font-semibold text-slate-900 dark:text-gray-200 hover:text-blue-600 hover:underline dark:hover:text-blue-600"
-          href="https://onwidget.com/"
+          href="https://arthelokyo.com/"
         >
           {' '}
-          onWidget
+          Arthelokyo
         </a>{' '}
         · All rights reserved.
       </span>
@@ -255,19 +255,19 @@ export const footerData2: FooterProps = {
     { label: 'Instagram', icon: IconBrandInstagram, href: '#' },
     { label: 'Facebook', icon: IconBrandFacebook, href: '#' },
     { label: 'RSS', icon: IconRss, href: '#' },
-    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/onwidget/tailnext' },
+    { label: 'Github', icon: IconBrandGithub, href: 'https://github.com/arthelokyo/tailnext' },
   ],
   footNote: (
     <div className="mr-4 rtl:mr-0 rtl:ml-4 text-sm">
-      <span className="float-left rtl:float-right mr-1.5 rtl:mr-0 rtl:ml-1.5 h-5 w-5 rounded-sm bg-[url(https://onwidget.com/favicon/favicon-32x32.png)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
+      <span className="float-left rtl:float-right mr-1.5 rtl:mr-0 rtl:ml-1.5 h-5 w-5 rounded-sm bg-[url(https://arthelokyo.com/favicon.svg)] bg-cover md:-mt-0.5 md:h-6 md:w-6"></span>
       <span>
         Made by{' '}
         <a
           className="font-semibold text-slate-900 dark:text-gray-200 hover:text-blue-600 hover:underline dark:hover:text-blue-600"
-          href="https://onwidget.com/"
+          href="https://arthelokyo.com/"
         >
           {' '}
-          onWidget
+          Arthelokyo
         </a>{' '}
         · All rights reserved.
       </span>

@@ -14,11 +14,11 @@
 
 <img src="./screenshot.jpg" alt="Tailnext Theme Screenshot">
 
-[![onWidget](https://custom-icon-badges.demolab.com/badge/made%20by%20-onWidget-556bf2?style=flat-square&logo=onwidget&logoColor=white&labelColor=101827)](https://onwidget.com)
-[![License](https://img.shields.io/github/license/onwidget/tailnext?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/onwidget/tailnext/blob/main/LICENSE.md)
-[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/onwidget)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/onwidget/tailnext#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/onwidget/tailnext/badge.svg?style=flat-square)](https://snyk.io/test/github/onwidget/tailnext)
+[![Arthelokyo](https://custom-icon-badges.demolab.com/badge/made%20by%20-Arthelokyo-556bf2?style=flat-square&logo=arthelokyo&logoColor=white&labelColor=101827)](https://arthelokyo.com)
+[![License](https://img.shields.io/github/license/arthelokyo/tailnext?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/arthelokyo/tailnext/blob/main/LICENSE.md)
+[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/arthelokyo/tailnext#contributing)
+[![Known Vulnerabilities](https://snyk.io/test/github/arthelokyo/tailnext/badge.svg?style=flat-square)](https://snyk.io/test/github/arthelokyo/tailnext)
 
 <br>
 
@@ -48,7 +48,7 @@
 
 ## Getting started
 
-- Clone: `git clone https://github.com/onwidget/tailnext.git`
+- Clone: `git clone https://github.com/arthelokyo/tailnext.git`
 - Enter in the directory: `cd tailnext`
 - Install dependencies: `npm install`
 - Start the development server: `npm run dev`
@@ -94,7 +94,7 @@ Inside **Tailnext** template, you'll see the following folders and files:
 └── ...
 ```
 
-[![Edit Tailnext on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/onwidget/tailnext/tree/main)
+[![Edit Tailnext on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/arthelokyo/tailnext/tree/main)
 
 > **Seasoned next.js expert?** Delete this file. Update `config.mjs` and contents. Have fun!
 
@@ -140,13 +140,13 @@ prefer.
 
 Clone this repository on own GitHub account and deploy to Netlify:
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/onwidget/tailnext.git)
+[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/arthelokyo/tailnext.git)
 
 #### Deploy to Vercel
 
 Clone this repository on own GitHub account and deploy to Vercel:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonwidget%2Ftailnext)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Farthelokyo%2Ftailnext)
 
 <br>
 
@@ -163,8 +163,8 @@ That would be very useful for all of us and we would be happy to listen and take
 
 ## Acknowledgements
 
-Initially created by [onWidget](https://onwidget.com) and maintained by a community of [contributors](https://github.com/onwidget/tailnext/graphs/contributors).
+Initially created by [Arthelokyo](https://arthelokyo.com) and maintained by a community of [contributors](https://github.com/arthelokyo/tailnext/graphs/contributors).
 
 ## License
 
-**Tailnext** is licensed under the MIT license — see the [LICENSE](https://github.com/onwidget/tailnext/blob/main/LICENSE.md) file for details.
+**Tailnext** is licensed under the MIT license — see the [LICENSE](https://github.com/arthelokyo/tailnext/blob/main/LICENSE.md) file for details.
