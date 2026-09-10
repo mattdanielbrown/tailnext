@@ -17,9 +17,13 @@ import {
   testimonialsServices,
 } from '~/shared/data/pages/services.data';
 
-export const metadata: Metadata = {
+import { buildMetadata } from '~/utils/metadata';
+
+export const metadata: Metadata = buildMetadata({
   title: 'Services',
-};
+  description: 'What we build and how we can help.',
+  path: '/services',
+});
 
 const Page = () => {
   return (

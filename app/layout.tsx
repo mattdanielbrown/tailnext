@@ -2,6 +2,7 @@ import { Metadata, Viewport } from 'next';
 
 import { SITE } from '~/config';
 
+import JsonLd from '~/components/common/JsonLd';
 import Providers from '~/components/atoms/Providers';
 import Header from '~/components/widgets/Header';
 import Announcement from '~/components/widgets/Announcement';
@@ -40,6 +41,27 @@ export default function RootLayout({ children }: LayoutProps) {
       suppressHydrationWarning
     >
       <body className="tracking-tight text-gray-900 antialiased dark:bg-slate-900 dark:text-slate-300">
+        <JsonLd
+          data={{
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'Organization',
+                '@id': `${SITE.origin}/#organization`,
+                name: SITE.name,
+                url: SITE.origin,
+              },
+              {
+                '@type': 'WebSite',
+                '@id': `${SITE.origin}/#website`,
+                name: SITE.name,
+                description: SITE.description,
+                url: SITE.origin,
+                publisher: { '@id': `${SITE.origin}/#organization` },
+              },
+            ],
+          }}
+        />
         <Providers>
           <a
             href="#main"

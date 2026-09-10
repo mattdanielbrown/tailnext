@@ -4,7 +4,9 @@ import { notFound } from 'next/navigation';
 
 import { allPosts } from 'content-collections';
 
+import JsonLd from '~/components/common/JsonLd';
 import Prose from '~/components/common/Prose';
+import { buildMetadata, siteUrl } from '~/utils/metadata';
 
 export const dynamicParams = false;
 
@@ -19,18 +21,15 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   const post = findPost(slug);
   if (!post) return {};
 
-  return {
+  return buildMetadata({
     title: post.title,
     description: post.description,
-    openGraph: {
-      type: 'article',
-      title: post.title,
-      description: post.description,
-      publishedTime: new Date(post.publishDate).toISOString(),
-      tags: post.tags,
-      ...(post.image ? { images: [post.image] } : {}),
-    },
-  };
+    path: `/blog/${post.slug}`,
+    image: post.image,
+    type: 'article',
+    publishedTime: new Date(post.publishDate).toISOString(),
+    tags: post.tags,
+  });
 }
 
 export default async function Page(props: { params: Promise<{ slug: string }> }) {
@@ -43,6 +42,18 @@ export default async function Page(props: { params: Promise<{ slug: string }> })
 
   return (
     <section className="mx-auto py-8 sm:py-16 lg:py-20">
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'BlogPosting',
+          headline: post.title,
+          description: post.description,
+          datePublished: new Date(post.publishDate).toISOString(),
+          mainEntityOfPage: siteUrl(`/blog/${post.slug}`),
+          ...(post.image ? { image: post.image } : {}),
+          keywords: post.tags,
+        }}
+      />
       <article>
         <header className={post.image ? 'text-center' : ''}>
           <p className="mx-auto max-w-3xl px-4 sm:px-6">

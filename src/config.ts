@@ -1,7 +1,8 @@
 export const SITE = {
   name: 'TailNext',
 
-  origin: 'https://tailnext.vercel.app',
+  // Sobrescribible por entorno para vistas previas y forks (ver .env.example).
+  origin: process.env.NEXT_PUBLIC_SITE_ORIGIN ?? 'https://tailnext.vercel.app',
   basePathname: '/',
   trailingSlash: false,
 

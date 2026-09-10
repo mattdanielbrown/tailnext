@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { SITE } from '~/config';
+import { buildMetadata } from '~/utils/metadata';
 
 import Hero from '~/components/widgets/Hero';
 import SocialProof from '~/components/widgets/SocialProof';
@@ -28,9 +28,7 @@ import {
   testimonialsHome,
 } from '~/shared/data/pages/home.data';
 
-export const metadata: Metadata = {
-  title: SITE.title,
-};
+export const metadata: Metadata = buildMetadata();
 
 export default function Page() {
   return (

@@ -42,6 +42,7 @@ const Steps = ({
               src={image.src}
               width={400}
               height={768}
+              sizes="(max-width: 768px) 100vw, 400px"
               alt={image.alt}
               placeholder="blur"
               className="inset-0 w-full rounded-md bg-gray-400 object-cover object-top shadow-lg md:absolute md:h-full dark:bg-slate-700"

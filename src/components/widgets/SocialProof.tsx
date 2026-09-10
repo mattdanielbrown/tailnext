@@ -15,6 +15,7 @@ const SocialProof = ({ images, id, hasBackground = false }: SocialProofProps) =>
                 className="h-auto w-12 object-contain opacity-50 contrast-50 grayscale duration-75 hover:opacity-100 hover:contrast-100 hover:grayscale-0 md:w-16"
                 width={64}
                 height={64}
+                sizes="(max-width: 768px) 48px, 64px"
               />
             </a>
           </div>

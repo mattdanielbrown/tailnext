@@ -1,13 +1,16 @@
 import type { Metadata } from 'next';
+
+import { buildMetadata } from '~/utils/metadata';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { allPosts } from 'content-collections';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildMetadata({
   title: 'Blog',
   description: 'Articles and updates.',
-};
+  path: '/blog',
+});
 
 export default function BlogIndex() {
   const posts = allPosts
@@ -26,7 +29,9 @@ export default function BlogIndex() {
             className="flex flex-col overflow-hidden rounded-xl border border-gray-200 shadow-lg dark:border-slate-700"
           >
             <Link href={`/blog/${slug}`}>
-              {image && <Image width={650} height={340} alt={title} src={image} />}
+              {image && (
+                <Image width={650} height={340} sizes="(max-width: 1024px) 100vw, 50vw" alt={title} src={image} />
+              )}
               <div className="p-4">
                 <h2 className="font-bold">{title}</h2>
                 <p className="mt-2 text-sm text-gray-500 dark:text-slate-400">

@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+
+import { buildMetadata } from '~/utils/metadata';
 import Contact from '~/components/widgets/Contact';
 
 import FAQs from '~/components/widgets/FAQs';
@@ -24,9 +26,11 @@ import {
   teamAbout,
 } from '~/shared/data/pages/about.data';
 
-export const metadata: Metadata = {
-  title: `About us`,
-};
+export const metadata: Metadata = buildMetadata({
+  title: 'About us',
+  description: 'Learn more about TailNext and the team behind it.',
+  path: '/about',
+});
 
 const Page = () => {
   return (
