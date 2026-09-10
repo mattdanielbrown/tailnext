@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 import Component from '~/components/widgets/FAQs3';
 import { faqs3Pricing as mockData } from '~/shared/data/pages/pricing.data';

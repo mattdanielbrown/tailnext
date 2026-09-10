@@ -28,7 +28,7 @@ const Card = ({ title, description, href, form }: Item) => (
               name={form.input.name}
               autoComplete={form.input.autocomplete}
               placeholder={form.input.placeholder}
-              className="w-full px-4 py-2 dark:text-gray-300"
+              className="w-full bg-transparent px-4 py-2 text-gray-900 placeholder:text-gray-500 dark:text-gray-300 dark:placeholder:text-gray-400"
             />
             <button
               type={form.btn.type}

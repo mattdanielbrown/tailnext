@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 
 import Component from '~/components/widgets/Hero';
 import { heroHome as mockData } from '~/shared/data/pages/home.data';
