@@ -21,6 +21,9 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      # next-env.d.ts y .content-collections están gitignorados y los genera Next.
+      # Sin esto tsc no resuelve ni los imports de imágenes ni 'content-collections'.
+      - run: npm run typegen
       - run: npm run lint
       - run: npm run typecheck
       - run: npm run prettier:check
@@ -40,6 +43,7 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: npm
       - run: npm ci
+      - run: npm run typegen
       # Las stories corren en un navegador real, así que hace falta el binario.
       - run: npx playwright install --with-deps chromium
       - run: npm test
