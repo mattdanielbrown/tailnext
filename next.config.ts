@@ -1,7 +1,10 @@
-const SITE = require('./src/config.js').SITE;
+import type { NextConfig } from 'next';
 
-/** @type {import('next').NextConfig} */
-module.exports = {
+// Ruta relativa a propósito: el archivo de configuración se carga fuera del
+// contexto de `paths` del tsconfig, así que el alias ~ no resolvería aquí.
+import { SITE } from './src/config';
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
 
   trailingSlash: SITE.trailingSlash,
@@ -20,3 +23,5 @@ module.exports = {
     ],
   },
 };
+
+export default nextConfig;

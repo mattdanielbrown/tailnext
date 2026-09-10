@@ -22,6 +22,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  // Sin metadataBase, cualquier URL relativa de OG o canonical no resuelve.
+  metadataBase: new URL(SITE.origin),
   title: {
     template: `%s — ${SITE.name}`,
     default: SITE.title,
