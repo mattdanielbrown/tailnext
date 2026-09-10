@@ -100,5 +100,9 @@
     "*.{json,md,mdx,css,yml,yaml}": [
       "prettier --write"
     ]
+  },
+  "overrides": {
+    "toml": "4.2.0",
+    "uuid": "11.1.1"
   }
 }
