@@ -99,6 +99,9 @@ const Header = () => {
                   {links && links.length ? (
                     <>
                       <button
+                        type="button"
+                        aria-expanded={Boolean(isDropdownOpen[index])}
+                        aria-haspopup="true"
                         className="flex items-center px-4 py-3 font-medium transition duration-150 ease-in-out hover:text-gray-900 dark:hover:text-white"
                         onClick={() => handleDropdownOnClick(index)}
                       >

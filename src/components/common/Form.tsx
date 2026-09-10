@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { FormProps } from '../../shared/types';
 
@@ -15,19 +15,21 @@ const Form = ({
   btnPosition,
   containerClass,
 }: FormProps) => {
-  const [inputValues, setInputValues] = useState([]);
+  const [inputValues, setInputValues] = useState<Record<string, string>>({});
   const [radioBtnValue, setRadioBtnValue] = useState('');
   const [textareaValues, setTextareaValues] = useState('');
   const [checkedState, setCheckedState] = useState<boolean[]>(new Array(checkboxes && checkboxes.length).fill(false));
+  // Los label traen espacios, así que no valen como id; useId da uno válido y único.
+  const baseId = useId();
 
   // Update the value of the entry fields
   const changeInputValueHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
 
-    setInputValues({
-      ...inputValues,
+    setInputValues((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
   // Update checked radio buttons
@@ -42,40 +44,39 @@ const Form = ({
 
   // Update checkbox radio buttons
   const changeCheckboxHandler = (index: number) => {
-    setCheckedState((prevValues) => {
-      const newValues = [...(prevValues as boolean[])];
-      newValues.map(() => {
-        newValues[index] = !checkedState[index];
-      });
-      return newValues;
-    });
+    setCheckedState((prevValues) => prevValues.map((checked, i) => (i === index ? !checked : checked)));
   };
 
   return (
-    <form id="contactForm" className={twMerge('', containerClass)}>
+    <form id="contactForm" onSubmit={(e) => e.preventDefault()} className={twMerge('', containerClass)}>
       {title && <h2 className={`${description ? 'mb-2' : 'mb-4'} text-2xl font-bold`}>{title}</h2>}
       {description && <p className="mb-4">{description}</p>}
       <div className="mb-6">
         {/* Inputs */}
         <div className="mx-0 mb-1 sm:mb-4">
           {inputs &&
-            inputs.map(({ type, label, name, autocomplete, placeholder }, index) => (
-              <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
-                <label htmlFor={name} className="pb-1 text-xs uppercase tracking-wider">
-                  {label}
-                </label>
-                <input
-                  type={type}
-                  id={name}
-                  name={name}
-                  autoComplete={autocomplete}
-                  value={inputValues[index]}
-                  onChange={changeInputValueHandler}
-                  placeholder={placeholder}
-                  className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
-                />
-              </div>
-            ))}
+            inputs.map(({ type, label, name, autocomplete, placeholder }, index) => {
+              // name es opcional en el tipo; sin una clave estable el input quedaría sin controlar.
+              const fieldName = name ?? `field-${index}`;
+
+              return (
+                <div key={`item-input-${index}`} className="mx-0 mb-1 sm:mb-4">
+                  <label htmlFor={fieldName} className="pb-1 text-xs uppercase tracking-wider">
+                    {label}
+                  </label>
+                  <input
+                    type={type}
+                    id={fieldName}
+                    name={fieldName}
+                    autoComplete={autocomplete}
+                    value={inputValues[fieldName] ?? ''}
+                    onChange={changeInputValueHandler}
+                    placeholder={placeholder}
+                    className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                  />
+                </div>
+              );
+            })}
         </div>
         {/* Radio buttons */}
         {radioBtns && (
@@ -85,15 +86,15 @@ const Form = ({
               {radioBtns.radios.map(({ label }, index) => (
                 <div key={`radio-btn-${index}`} className="mr-4 items-baseline">
                   <input
-                    id={label}
+                    id={`${baseId}-radio-${index}`}
                     type="radio"
-                    name={label}
+                    name={`${baseId}-radios`}
                     value={`value${index}`}
                     checked={radioBtnValue === `value${index}`}
                     onChange={changeRadioBtnsHandler}
                     className="cursor-pointer"
                   />
-                  <label htmlFor={label} className="ml-2">
+                  <label htmlFor={`${baseId}-radio-${index}`} className="ml-2">
                     {label}
                   </label>
                 </div>
@@ -125,14 +126,14 @@ const Form = ({
             {checkboxes.map(({ label }, index) => (
               <div key={`checkbox-${index}`} className="mx-0 my-1 flex items-baseline">
                 <input
-                  id={label}
+                  id={`${baseId}-checkbox-${index}`}
                   type="checkbox"
                   name={label}
                   checked={checkedState[index]}
                   onChange={() => changeCheckboxHandler(index)}
                   className="cursor-pointer"
                 />
-                <label htmlFor={label} className="ml-2">
+                <label htmlFor={`${baseId}-checkbox-${index}`} className="ml-2">
                   {label}
                 </label>
               </div>

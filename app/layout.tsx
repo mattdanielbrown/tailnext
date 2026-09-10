@@ -37,9 +37,15 @@ export default function RootLayout({ children }: LayoutProps) {
       </head>
       <body className="tracking-tight text-gray-900 antialiased dark:bg-slate-900 dark:text-slate-300">
         <Providers>
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-gray-900 focus:shadow-lg dark:focus:bg-slate-800 dark:focus:text-white"
+          >
+            Skip to content
+          </a>
           <Announcement />
           <Header />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <Footer2 />
         </Providers>
       </body>
