@@ -14,6 +14,12 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 
   async headers() {
+    // React en desarrollo usa eval() para reconstruir callstacks y otras ayudas de
+    // depuración; en producción nunca lo hace. Se relaja solo en dev para no
+    // debilitar la política del sitio desplegado.
+    const isDev = process.env.NODE_ENV === 'development';
+    const scriptSrc = isDev ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'" : "script-src 'self' 'unsafe-inline'";
+
     return [
       {
         source: '/:path*',
@@ -30,7 +36,7 @@ const nextConfig: NextConfig = {
               "default-src 'self'",
               // Next inyecta scripts en línea para hidratación y para el script de
               // tema de next-themes, que corre antes de pintar.
-              "script-src 'self' 'unsafe-inline'",
+              scriptSrc,
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https://images.unsplash.com https://img.shields.io https://arthelokyo.com",
               "font-src 'self' data:",
