@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 
 import { SITE } from '~/config.js';
 
@@ -16,6 +16,11 @@ export interface LayoutProps {
   children: React.ReactNode;
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: {
     template: `%s — ${SITE.name}`,
@@ -29,12 +34,9 @@ export default function RootLayout({ children }: LayoutProps) {
     <html
       lang="en"
       className={`motion-safe:scroll-smooth 2xl:text-[24px] ${customFont.variable} font-sans`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body className="tracking-tight text-gray-900 antialiased dark:bg-slate-900 dark:text-slate-300">
         <Providers>
           <a
